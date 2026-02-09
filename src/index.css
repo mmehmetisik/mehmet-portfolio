@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  }
+  ::selection {
+    background-color: rgba(34, 211, 238, 0.2);
+    color: #e2e8f0;
+  }
+}
