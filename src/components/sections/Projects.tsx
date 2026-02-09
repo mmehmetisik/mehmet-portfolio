@@ -1,9 +1,10 @@
 // ============================================================
 // Projects — Filterable project gallery
 // SRP: Responsible only for rendering project cards and filter UI
+// Includes stagger reveal animation for project cards
 // ============================================================
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { projects, projectCategories, type ProjectCategory } from "../../data/projects";
 import { SectionHeader } from "../common/SectionHeader";
 import { TechBadge } from "../common/TechBadge";
@@ -11,6 +12,7 @@ import { TechBadge } from "../common/TechBadge";
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | "All">("All");
   const [showAll, setShowAll] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   // Filter projects by selected category
   const filtered =
@@ -18,8 +20,30 @@ export function Projects() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  // Show first 9 by default, expand to show all
-  const visible = showAll ? filtered : filtered.slice(0, 9);
+  // Show featured 6 first, then expand to show all
+  const visible = showAll
+    ? filtered
+    : activeFilter === "All"
+      ? projects.filter((p) => p.featured).slice(0, 6)
+      : filtered.slice(0, 6);
+
+  // Re-trigger stagger animation when filter changes or show all toggles
+  useEffect(() => {
+    const container = gridRef.current;
+    if (!container) return;
+
+    const cards = container.querySelectorAll(".project-card");
+    cards.forEach((card, i) => {
+      const el = card as HTMLElement;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      setTimeout(() => {
+        el.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      }, i * 80);
+    });
+  }, [activeFilter, showAll]);
 
   return (
     <section className="py-20 px-6 bg-slate-900/30">
@@ -54,14 +78,14 @@ export function Projects() {
         </div>
 
         {/* Project cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {visible.map((project, i) => (
             <ProjectCard key={`${project.title}-${i}`} project={project} />
           ))}
         </div>
 
         {/* Show more / less toggle */}
-        {filtered.length > 9 && (
+        {filtered.length > 6 && (
           <div className="mt-8 text-center">
             <button
               onClick={() => setShowAll(!showAll)}
@@ -108,7 +132,7 @@ function FilterButton({
 /** Individual project card */
 function ProjectCard({ project }: { project: typeof projects[number] }) {
   return (
-    <div className="group p-5 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-900/30 transition-all flex flex-col">
+    <div className="project-card group p-5 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-900/30 transition-all flex flex-col">
       {/* Top row: category + year */}
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs text-cyan-500/70 font-medium">{project.category}</span>
@@ -162,7 +186,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
               rel="noopener noreferrer"
               className="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
             >
-              GitHub →
+              {"GitHub \u2192"}
             </a>
           )}
           {project.links.kaggle && (
@@ -172,7 +196,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
               rel="noopener noreferrer"
               className="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
             >
-              Kaggle →
+              {"Kaggle \u2192"}
             </a>
           )}
           {project.links.demo && (
@@ -182,7 +206,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
               rel="noopener noreferrer"
               className="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
             >
-              Live Demo →
+              {"Live Demo \u2192"}
             </a>
           )}
         </div>

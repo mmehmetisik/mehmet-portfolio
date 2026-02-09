@@ -6,9 +6,9 @@
 
 export interface Project {
   title: string;
-  subtitle: string;          // short tech stack or context
-  description: string;       // 2-3 sentence description
-  tags: string[];            // technology tags for filtering
+  subtitle: string;
+  description: string;
+  tags: string[];
   category: ProjectCategory;
   year: string;
   links?: {
@@ -17,30 +17,29 @@ export interface Project {
     medium?: string;
     demo?: string;
   };
-  highlights?: string[];     // key metrics or achievements
+  highlights?: string[];
+  featured?: boolean;
 }
 
 export type ProjectCategory =
   | "GenAI & LLM"
   | "Machine Learning"
-  | "Data Engineering"
+  | "Data Engineering & Cloud"
   | "AI Applications"
-  | "Cloud & Pipeline"
   | "NLP"
   | "Data Science";
 
 export const projectCategories: ProjectCategory[] = [
   "GenAI & LLM",
   "Machine Learning",
-  "Data Engineering",
+  "Data Engineering & Cloud",
   "AI Applications",
-  "Cloud & Pipeline",
   "NLP",
   "Data Science",
 ];
 
 export const projects: Project[] = [
-  // ── GenAI & LLM ──────────────────────────────────────────
+  // == GenAI & LLM ==
   {
     title: "WWTP Autonomous Management Benchmark",
     subtitle: "Multi-LLM Agent Architecture — Research Project",
@@ -51,20 +50,22 @@ export const projects: Project[] = [
     year: "2025",
     links: { kaggle: "https://kaggle.com/mehmetisik" },
     highlights: ["7 frontier LLMs evaluated", "92% Grade A performance", "120+ evaluations"],
+    featured: true,
   },
   {
     title: "WWTP Engineering Benchmark",
-    subtitle: "18 LLMs on Domain-Specific Tasks",
+    subtitle: "20+ LLMs on Domain-Specific Tasks",
     description:
-      "Created a comprehensive benchmark evaluating 18 frontier LLMs on 10 real-world wastewater engineering tasks derived from hands-on operational experience.",
+      "Created a comprehensive benchmark evaluating 20+ frontier LLMs on 10 real-world wastewater engineering tasks derived from hands-on operational experience.",
     tags: ["LLM", "Benchmark", "Domain-Specific", "Kaggle"],
     category: "GenAI & LLM",
     year: "2025",
     links: { kaggle: "https://kaggle.com/mehmetisik" },
-    highlights: ["18 LLMs tested", "10 engineering tasks", "Published on Kaggle"],
+    highlights: ["20+ LLMs tested", "10 engineering tasks", "Published on Kaggle"],
+    featured: true,
   },
 
-  // ── AI Applications ──────────────────────────────────────
+  // == AI Applications ==
   {
     title: "Smart API Agent",
     subtitle: "Streamlit, Groq API, Multi-Platform AI",
@@ -74,6 +75,7 @@ export const projects: Project[] = [
     category: "AI Applications",
     year: "2025",
     links: { github: "https://github.com/mmehmetisik" },
+    featured: true,
   },
   {
     title: "Data Insight Agent",
@@ -106,6 +108,16 @@ export const projects: Project[] = [
     links: { github: "https://github.com/mmehmetisik" },
   },
   {
+    title: "AI Text-to-Image Generator",
+    subtitle: "Multi-Model Image Generation",
+    description:
+      "Interactive application for generating images from text prompts using multiple AI models, with style customization and comparison features.",
+    tags: ["Text-to-Image", "AI", "Streamlit", "Multi-Model"],
+    category: "AI Applications",
+    year: "2024",
+    links: { github: "https://github.com/mmehmetisik" },
+  },
+  {
     title: "AI Text Generation Studio",
     subtitle: "Multi-Model Text Generation",
     description:
@@ -116,7 +128,7 @@ export const projects: Project[] = [
     links: { github: "https://github.com/mmehmetisik" },
   },
 
-  // ── Machine Learning ─────────────────────────────────────
+  // == Machine Learning ==
   {
     title: "Higgs Boson Detection with ML",
     subtitle: "9-Layer Feature Engineering + CatBoost",
@@ -126,11 +138,34 @@ export const projects: Project[] = [
     category: "Machine Learning",
     year: "2025",
     links: { kaggle: "https://kaggle.com/mehmetisik" },
-    highlights: ["28 → 100+ features", "9 layers of FE", "SHAP analysis"],
+    highlights: ["28 to 100+ features", "9 layers of FE", "SHAP analysis"],
+    featured: true,
+  },
+  {
+    title: "Emotion Recognition with Deep Learning",
+    subtitle: "Keras + CNN — Image Classification",
+    description:
+      "Built a deep learning model using Keras and CNNs for recognizing human emotions from facial expressions, applying transfer learning and data augmentation techniques.",
+    tags: ["Deep Learning", "Keras", "CNN", "Computer Vision"],
+    category: "Machine Learning",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["CNN architecture", "Transfer learning"],
+  },
+  {
+    title: "RNA 3D Structure Prediction Pipeline",
+    subtitle: "Bioinformatics + Machine Learning",
+    description:
+      "Developed a computational pipeline for predicting RNA 3D structures using machine learning approaches, bridging bioinformatics and AI.",
+    tags: ["Bioinformatics", "RNA", "Pipeline", "Prediction"],
+    category: "Machine Learning",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["3D structure prediction", "Bioinformatics + AI"],
   },
   {
     title: "Titanic Survival Prediction",
-    subtitle: "Complete ML Pipeline",
+    subtitle: "Complete ML Pipeline — 34-Step Masterclass",
     description:
       "End-to-end machine learning pipeline with comprehensive EDA, feature engineering, and model comparison for the classic Titanic dataset.",
     tags: ["Classification", "EDA", "Feature Engineering", "Scikit-learn"],
@@ -154,6 +189,24 @@ export const projects: Project[] = [
     description:
       "Built and compared multiple ML models for predicting customer churn in telecom, including logistic regression, random forest, and gradient boosting.",
     tags: ["Classification", "Churn", "Ensemble", "Business"],
+    category: "Machine Learning",
+    year: "2023",
+  },
+  {
+    title: "Is Bankasi Menu Recommendation System",
+    subtitle: "LightGBM + OneVsRestClassifier — Competition",
+    description:
+      "AI-based recommendation system for Is Bankasi mobile app menu suggestions using LightGBM and OneVsRestClassifier.",
+    tags: ["LightGBM", "Classification", "Recommendation", "Competition"],
+    category: "Machine Learning",
+    year: "2023",
+  },
+  {
+    title: "iyzico E-Commerce Forecasting",
+    subtitle: "XGBoost + Random Forests — Competition",
+    description:
+      "ML-driven merchant trend forecasting for iyzico e-commerce platform using XGBoost and Random Forests.",
+    tags: ["XGBoost", "Random Forest", "Forecasting", "Competition"],
     category: "Machine Learning",
     year: "2023",
   },
@@ -184,18 +237,51 @@ export const projects: Project[] = [
     category: "Machine Learning",
     year: "2023",
   },
+  {
+    title: "Data Science Salary Prediction",
+    subtitle: "EDA + Regression — Score 0.93",
+    description:
+      "Exploratory data analysis and salary prediction for data science roles, achieving 0.93 prediction score with comprehensive feature analysis and visualization.",
+    tags: ["Regression", "EDA", "Visualization", "Career Analytics"],
+    category: "Machine Learning",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["0.93 prediction score"],
+  },
+  {
+    title: "U.S. Farm Biogas ML Prediction",
+    subtitle: "Environmental ML — 2 Studies",
+    description:
+      "Predicted biogas production potential from U.S. dairy cow and livestock farms using ML models, combining environmental engineering domain knowledge with data science.",
+    tags: ["Regression", "Environmental", "Energy", "Domain Expertise"],
+    category: "Machine Learning",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["2 prediction studies", "Domain expertise + ML"],
+  },
 
-  // ── Data Engineering ─────────────────────────────────────
+  // == Data Engineering & Cloud ==
   {
     title: "Real-Time IoT Sensor Data Analytics",
     subtitle: "Kafka, Spark, Elasticsearch, Kibana, Docker",
     description:
       "Implemented an end-to-end real-time data pipeline for IoT sensor data. Apache Kafka for streaming, Spark for processing, Elasticsearch + Kibana for dashboards, ML for activity prediction.",
     tags: ["Kafka", "Spark", "Elasticsearch", "Docker", "ML", "IoT"],
-    category: "Data Engineering",
+    category: "Data Engineering & Cloud",
     year: "2024",
     links: { github: "https://github.com/mmehmetisik" },
     highlights: ["End-to-end pipeline", "Real-time ML predictions", "Full Docker deployment"],
+    featured: true,
+  },
+  {
+    title: "Kafka Message Processor",
+    subtitle: "Stream Processing Pipeline",
+    description:
+      "Built a real-time message processing system using Apache Kafka for high-throughput stream data ingestion and transformation.",
+    tags: ["Kafka", "Stream Processing", "Real-Time", "Python"],
+    category: "Data Engineering & Cloud",
+    year: "2024",
+    links: { github: "https://github.com/mmehmetisik" },
   },
   {
     title: "Real-Time Cryptocurrency Analytics (AWS)",
@@ -203,7 +289,17 @@ export const projects: Project[] = [
     description:
       "Cloud-native real-time data processing pipeline for cryptocurrency market analytics using AWS Kinesis, Redshift, and automated ETL workflows.",
     tags: ["AWS", "Kinesis", "Redshift", "Binance", "Real-Time"],
-    category: "Cloud & Pipeline",
+    category: "Data Engineering & Cloud",
+    year: "2024",
+    links: { github: "https://github.com/mmehmetisik" },
+  },
+  {
+    title: "Real-Time Binance Data Pipeline",
+    subtitle: "Automated Crypto Data Processing",
+    description:
+      "Automated data processing pipeline for real-time Binance cryptocurrency market data with scheduled ETL and data quality checks.",
+    tags: ["Binance API", "ETL", "Automation", "Python"],
+    category: "Data Engineering & Cloud",
     year: "2024",
     links: { github: "https://github.com/mmehmetisik" },
   },
@@ -213,22 +309,46 @@ export const projects: Project[] = [
     description:
       "Designed and built 6 cloud-native data pipelines for analytics using various AWS services including Lambda triggers, Kinesis streaming, and Redshift warehousing.",
     tags: ["AWS", "Lambda", "S3", "DynamoDB", "QuickSight"],
-    category: "Cloud & Pipeline",
+    category: "Data Engineering & Cloud",
     year: "2023",
     links: { github: "https://github.com/mmehmetisik" },
     highlights: ["6 cloud-native pipelines", "Multiple AWS services"],
   },
+  {
+    title: "AWS DynamoDB & SQS Data Projects",
+    subtitle: "NoSQL + Message Queue — 2 Projects",
+    description:
+      "Built data insertion and processing pipelines using AWS DynamoDB for NoSQL storage and SQS for message queuing, implementing serverless architectures.",
+    tags: ["DynamoDB", "SQS", "AWS", "Serverless", "NoSQL"],
+    category: "Data Engineering & Cloud",
+    year: "2023",
+    links: { github: "https://github.com/mmehmetisik" },
+    highlights: ["2 AWS projects", "Serverless architecture"],
+  },
+  {
+    title: "ADANA ASKI Industrial Management Systems",
+    subtitle: "Inventory & Request Tracking — 2 Systems",
+    description:
+      "Developed two real-world industrial management systems for Adana Water Authority: an inventory tracking system for warehouse management and a service request tracking system for operational workflows.",
+    tags: ["Industrial IoT", "Management System", "Real-World", "Operations"],
+    category: "Data Engineering & Cloud",
+    year: "2023",
+    links: { github: "https://github.com/mmehmetisik" },
+    highlights: ["2 production systems", "Real-world deployment"],
+    featured: true,
+  },
 
-  // ── NLP & Sentiment ──────────────────────────────────────
+  // == NLP ==
   {
     title: "Amazon Reviews Sentiment Analysis",
-    subtitle: "NLP + ML for Sales Insights",
+    subtitle: "NLP + ML for Sales Insights — 2 Projects",
     description:
-      "Sentiment analysis pipeline for Amazon product reviews, extracting insights to boost sales through understanding customer sentiment patterns.",
+      "Built two comprehensive sentiment analysis pipelines for Amazon product reviews using different NLP approaches, extracting actionable insights to boost sales.",
     tags: ["NLP", "Sentiment Analysis", "Text Mining", "Business"],
     category: "NLP",
     year: "2024",
     links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["2 analysis projects", "Multiple NLP approaches"],
   },
   {
     title: "Twitter Sentiment Analysis",
@@ -249,42 +369,118 @@ export const projects: Project[] = [
     year: "2024",
   },
 
-  // ── Data Science ─────────────────────────────────────────
+  // == Data Science ==
+  {
+    title: "Global Renewable Energy Analysis",
+    subtitle: "17-Part EDA Series — Solar, Wind, Hydro, Biofuel, Geothermal",
+    description:
+      "Comprehensive 17-notebook analysis series examining global renewable energy trends across 5 major sectors. Covers production capacity, growth patterns, and regional comparisons with rich visualizations.",
+    tags: ["EDA", "Visualization", "Energy", "Pandas", "Environmental"],
+    category: "Data Science",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["17 notebooks", "5 energy sectors", "Global scope"],
+  },
+  {
+    title: "Solar Power Generation Analysis",
+    subtitle: "EDA & Visualization — 23 Comments",
+    description:
+      "Detailed exploratory analysis of solar power generation data with comprehensive visualizations, trend analysis, and performance metrics.",
+    tags: ["EDA", "Solar Energy", "Visualization", "Pandas"],
+    category: "Data Science",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["23 community comments"],
+  },
+  {
+    title: "Analysis of Landfills in America",
+    subtitle: "Environmental Data Science",
+    description:
+      "Data-driven analysis of landfill distribution, capacity, and environmental impact across the United States, combining environmental engineering domain knowledge with data science.",
+    tags: ["EDA", "Environmental", "Visualization", "Geospatial"],
+    category: "Data Science",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+  },
+  {
+    title: "General Review of Biogas in U.S. Farms",
+    subtitle: "Environmental Analysis & Research",
+    description:
+      "Comprehensive data-driven review of biogas production potential across U.S. farms, analyzing production trends, regional patterns, and sustainability metrics.",
+    tags: ["EDA", "Environmental", "Energy", "Research"],
+    category: "Data Science",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+  },
   {
     title: "RFM Analysis & Customer Segmentation",
-    subtitle: "CRM Analytics — FLO",
+    subtitle: "CRM Analytics — 3 Projects",
     description:
-      "Customer segmentation using RFM (Recency, Frequency, Monetary) analysis for FLO retail company, enabling targeted marketing strategies.",
+      "Applied RFM (Recency, Frequency, Monetary) analysis across 3 different retail datasets including FLO, demonstrating versatile CRM analytics skills with varying segmentation strategies.",
     tags: ["RFM", "Segmentation", "CRM", "Business"],
     category: "Data Science",
     year: "2023",
+    highlights: ["3 datasets analyzed", "Multiple segmentation strategies"],
   },
   {
-    title: "CLTV Prediction with BG-NBD & Gamma-Gamma",
-    subtitle: "Customer Lifetime Value Modeling",
+    title: "CLTV Prediction & Customer Lifetime Value",
+    subtitle: "BG-NBD & Gamma-Gamma — 3 Projects",
     description:
-      "Predicted customer lifetime value using BG-NBD and Gamma-Gamma models with customer segmentation for strategic business planning.",
+      "Predicted customer lifetime value using BG-NBD and Gamma-Gamma models across 3 projects including FLO retail, with customer segmentation for strategic business planning.",
     tags: ["CLTV", "BG-NBD", "Gamma-Gamma", "Segmentation"],
     category: "Data Science",
     year: "2023",
+    highlights: ["3 CLTV projects", "Probabilistic modeling"],
   },
   {
-    title: "A/B Testing Analysis Platform",
-    subtitle: "Statistical Testing & Experimentation",
+    title: "A/B Testing & Statistical Experimentation",
+    subtitle: "Hypothesis Testing Across Multiple Datasets",
     description:
-      "Built a comprehensive A/B testing analysis platform covering hypothesis testing, statistical significance, and experiment design methodologies.",
-    tags: ["A/B Testing", "Statistics", "Hypothesis Testing"],
+      "Comprehensive A/B testing and statistical analysis across multiple real-world datasets including Facebook conversion data, covering hypothesis testing, significance analysis, and experiment design.",
+    tags: ["A/B Testing", "Statistics", "Hypothesis Testing", "Facebook"],
     category: "Data Science",
     year: "2023",
+    highlights: ["Multiple datasets", "Facebook conversion data"],
   },
   {
-    title: "Hybrid Recommender System",
-    subtitle: "Content-Based + Collaborative Filtering",
+    title: "Recommendation Systems",
+    subtitle: "4 Approaches — Content, Item, User, Model-Based",
     description:
-      "Developed a hybrid recommendation system combining content-based and collaborative filtering approaches for improved recommendation quality.",
-    tags: ["Recommender System", "Collaborative Filtering", "Content-Based"],
+      "Developed a comprehensive recommendation system portfolio implementing 4 different approaches: content-based, item-based collaborative filtering, user-based collaborative filtering, and model-based matrix factorization.",
+    tags: ["Recommender System", "Collaborative Filtering", "Matrix Factorization"],
     category: "Data Science",
     year: "2023",
+    highlights: ["4 approaches implemented", "Hybrid system"],
+  },
+  {
+    title: "Association Rule Learning",
+    subtitle: "Market Basket Analysis — 2 Projects",
+    description:
+      "Applied Apriori and association rule mining algorithms across 2 projects for market basket analysis, discovering purchasing patterns and product relationships.",
+    tags: ["Apriori", "Market Basket", "Association Rules", "Business"],
+    category: "Data Science",
+    year: "2023",
+    highlights: ["2 analysis projects"],
+  },
+  {
+    title: "Rating & Sorting Systems",
+    subtitle: "Wilson Lower Bound + IMDB Scoring — 4 Projects",
+    description:
+      "Built 4 different product rating and review sorting systems using statistical methods including Wilson Lower Bound, Bayesian average, and IMDB weighted scoring.",
+    tags: ["Statistics", "Wilson Score", "Bayesian", "Ranking"],
+    category: "Data Science",
+    year: "2023",
+    highlights: ["4 scoring systems", "Statistical methods"],
+  },
+  {
+    title: "Rule-Based Classification",
+    subtitle: "Customer Segmentation — 2 Projects",
+    description:
+      "Developed rule-based classification systems across 2 projects for customer segmentation and persona definition using demographic and behavioral data.",
+    tags: ["Classification", "Rule-Based", "Segmentation", "Business"],
+    category: "Data Science",
+    year: "2023",
+    highlights: ["2 classification projects"],
   },
   {
     title: "Airbnb NYC EDA & Price Prediction",
@@ -296,21 +492,45 @@ export const projects: Project[] = [
     year: "2023",
   },
   {
-    title: "İş Bankası Menu Recommendation System",
-    subtitle: "LightGBM + OneVsRestClassifier — Competition",
+    title: "Airline Passenger Forecasting",
+    subtitle: "Time Series Analysis — 27 Comments",
     description:
-      "AI-based recommendation system for İş Bankası mobile app menu suggestions using LightGBM and OneVsRestClassifier.",
-    tags: ["LightGBM", "Classification", "Recommendation", "Competition"],
-    category: "Machine Learning",
-    year: "2023",
+      "Time series forecasting of airline passenger volumes using statistical and ML approaches, with comprehensive trend and seasonality analysis.",
+    tags: ["Time Series", "Forecasting", "ARIMA", "Visualization"],
+    category: "Data Science",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["27 community comments", "Time series forecasting"],
   },
   {
-    title: "iyzico E-Commerce Forecasting",
-    subtitle: "XGBoost + Random Forests — Competition",
+    title: "Transaction Forecasting",
+    subtitle: "Financial Time Series — 20 Comments",
     description:
-      "ML-driven merchant trend forecasting for iyzico e-commerce platform using XGBoost and Random Forests.",
-    tags: ["XGBoost", "Random Forest", "Forecasting", "Competition"],
-    category: "Machine Learning",
+      "Forecasting financial transaction volumes using time series methods with trend decomposition, seasonality modeling, and predictive analytics.",
+    tags: ["Time Series", "Forecasting", "Financial", "Analytics"],
+    category: "Data Science",
+    year: "2024",
+    links: { kaggle: "https://kaggle.com/mehmetisik" },
+    highlights: ["20 community comments"],
+  },
+  {
+    title: "Time Series Methods & Smoothing",
+    subtitle: "Holt-Winters + Statistical Methods — 2 Projects",
+    description:
+      "Applied Holt-Winters exponential smoothing and various statistical time series methods across 2 projects for trend analysis and forecasting.",
+    tags: ["Holt-Winters", "Time Series", "Smoothing", "Statistics"],
+    category: "Data Science",
     year: "2023",
+    highlights: ["2 methodology projects"],
+  },
+  {
+    title: "Monthly Excel Data Separator",
+    subtitle: "Python Automation Script",
+    description:
+      "Built a Python automation tool that separates large Excel files into monthly sheets, streamlining data organization workflows for business users.",
+    tags: ["Python", "Automation", "Excel", "Pandas"],
+    category: "Data Science",
+    year: "2023",
+    links: { github: "https://github.com/mmehmetisik" },
   },
 ];

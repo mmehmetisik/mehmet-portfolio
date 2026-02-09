@@ -1,12 +1,17 @@
 // ============================================================
 // Education — Education history and certifications
 // SRP: Responsible only for rendering education & certs
+// Includes scroll reveal animation
 // ============================================================
 
 import { education, certifications } from "../../data/education";
 import { SectionHeader } from "../common/SectionHeader";
+import { useScrollReveal, useStaggerReveal } from "../../hooks/useScrollReveal";
 
 export function Education() {
+  const eduRef = useScrollReveal<HTMLDivElement>();
+  const certRef = useStaggerReveal<HTMLDivElement>();
+
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -18,7 +23,7 @@ export function Education() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Education column */}
-          <div>
+          <div ref={eduRef}>
             <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
               Education
             </h3>
@@ -46,7 +51,7 @@ export function Education() {
           </div>
 
           {/* Certifications column */}
-          <div>
+          <div ref={certRef}>
             <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
               Training & Certifications
             </h3>
@@ -54,7 +59,7 @@ export function Education() {
               {certifications.map((cert, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between p-3 rounded-lg bg-slate-800/15 border border-slate-800/30 hover:border-slate-700/50 transition-colors"
+                  className="stagger-item flex items-center justify-between p-3 rounded-lg bg-slate-800/15 border border-slate-800/30 hover:border-slate-700/50 transition-colors"
                 >
                   <div>
                     <p className="text-sm text-slate-200">{cert.name}</p>

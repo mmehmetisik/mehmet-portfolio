@@ -1,13 +1,17 @@
 // ============================================================
 // Contact — Contact information and call-to-action
 // SRP: Responsible only for rendering contact details
+// Includes scroll reveal animation
 // ============================================================
 
 import { profile } from "../../data/profile";
 import { SectionHeader } from "../common/SectionHeader";
 import { SocialIcon } from "../common/SocialIcon";
+import { useStaggerReveal } from "../../hooks/useScrollReveal";
 
 export function Contact() {
+  const cardsRef = useStaggerReveal<HTMLDivElement>();
+
   return (
     <section className="py-20 px-6 bg-slate-900/30">
       <div className="max-w-6xl mx-auto">
@@ -17,12 +21,12 @@ export function Contact() {
           subtitle="Let's discuss how I can contribute to your team"
         />
 
-        <div className="max-w-2xl">
+        <div ref={cardsRef} className="max-w-2xl">
           {/* Contact cards */}
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             <a
               href={`mailto:${profile.email}`}
-              className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-800/40 transition-all group"
+              className="stagger-item flex items-center gap-4 p-4 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-800/40 transition-all group"
             >
               <div className="w-10 h-10 rounded-lg bg-cyan-950/40 border border-cyan-800/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-900/30 transition-colors">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,7 +42,7 @@ export function Contact() {
 
             <a
               href={`tel:${profile.phone}`}
-              className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-800/40 transition-all group"
+              className="stagger-item flex items-center gap-4 p-4 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-800/40 transition-all group"
             >
               <div className="w-10 h-10 rounded-lg bg-cyan-950/40 border border-cyan-800/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-900/30 transition-colors">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -51,7 +55,7 @@ export function Contact() {
               </div>
             </a>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/20 border border-slate-800/40">
+            <div className="stagger-item flex items-center gap-4 p-4 rounded-xl bg-slate-800/20 border border-slate-800/40">
               <div className="w-10 h-10 rounded-lg bg-slate-800/60 border border-slate-700/30 flex items-center justify-center text-slate-400">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -66,7 +70,7 @@ export function Contact() {
           </div>
 
           {/* Social links row */}
-          <div className="flex items-center gap-4 pt-4 border-t border-slate-800/30">
+          <div className="stagger-item flex items-center gap-4 pt-4 border-t border-slate-800/30">
             <span className="text-xs text-slate-600 uppercase tracking-wider">Find me on</span>
             {profile.socials.map((s) => (
               <a

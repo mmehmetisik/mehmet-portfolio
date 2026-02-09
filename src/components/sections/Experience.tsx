@@ -1,12 +1,16 @@
 // ============================================================
 // Experience — Work history as a vertical timeline
 // SRP: Responsible only for rendering work experience
+// Includes scroll reveal animation for each timeline card
 // ============================================================
 
 import { experience } from "../../data/experience";
 import { SectionHeader } from "../common/SectionHeader";
+import { useStaggerReveal } from "../../hooks/useScrollReveal";
 
 export function Experience() {
+  const timelineRef = useStaggerReveal<HTMLDivElement>(0.05);
+
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -21,9 +25,9 @@ export function Experience() {
           {/* Vertical line */}
           <div className="absolute left-0 md:left-4 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-800/40 via-slate-700/30 to-transparent" />
 
-          <div className="space-y-8">
+          <div ref={timelineRef} className="space-y-8">
             {experience.map((exp, i) => (
-              <div key={i} className="relative pl-8 md:pl-14">
+              <div key={i} className="stagger-item relative pl-8 md:pl-14">
                 {/* Timeline dot */}
                 <div
                   className={`absolute left-0 md:left-4 top-1.5 w-2 h-2 rounded-full -translate-x-[3px] ${
@@ -60,7 +64,7 @@ export function Experience() {
                   <ul className="space-y-1.5 mt-3">
                     {exp.bullets.map((bullet, j) => (
                       <li key={j} className="flex items-start gap-2 text-[14px] text-slate-400 leading-relaxed">
-                        <span className="text-cyan-600 mt-1.5 flex-shrink-0">▸</span>
+                        <span className="text-cyan-600 mt-1.5 flex-shrink-0">&#9656;</span>
                         <span>{bullet}</span>
                       </li>
                     ))}

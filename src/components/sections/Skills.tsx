@@ -1,13 +1,17 @@
 // ============================================================
 // Skills — Technical skills organized by category
 // SRP: Responsible only for rendering the skills grid
+// Includes stagger reveal animation for skill cards
 // ============================================================
 
 import { skills } from "../../data/skills";
 import { SectionHeader } from "../common/SectionHeader";
 import { TechBadge } from "../common/TechBadge";
+import { useStaggerReveal } from "../../hooks/useScrollReveal";
 
 export function Skills() {
+  const gridRef = useStaggerReveal<HTMLDivElement>();
+
   return (
     <section className="py-20 px-6 bg-slate-900/30">
       <div className="max-w-6xl mx-auto">
@@ -17,11 +21,11 @@ export function Skills() {
           subtitle="Tools and technologies I work with every day"
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {skills.map((group) => (
             <div
               key={group.category}
-              className="p-5 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-900/30 transition-all group"
+              className="stagger-item p-5 rounded-xl bg-slate-800/20 border border-slate-800/40 hover:border-cyan-900/30 transition-all group"
             >
               {/* Category header with emoji */}
               <div className="flex items-center gap-2 mb-3">
