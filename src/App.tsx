@@ -4,6 +4,7 @@
 // Each section handles its own data fetching and rendering
 // ============================================================
 
+import { useState, useCallback } from "react";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
@@ -13,21 +14,28 @@ import { Experience } from "./components/sections/Experience";
 import { Projects } from "./components/sections/Projects";
 import { Education } from "./components/sections/Education";
 import { Contact } from "./components/sections/Contact";
+import { Loader } from "./components/layout/Loader";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+  const handleLoaded = useCallback(() => setLoading(false), []);
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 antialiased">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      {loading && <Loader onFinish={handleLoaded} />}
+      <div className={`min-h-screen bg-slate-950 text-slate-100 antialiased transition-opacity duration-500 ${loading ? "opacity-0" : "opacity-100"}`}>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }

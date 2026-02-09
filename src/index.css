@@ -65,7 +65,7 @@
   }
 }
 
-/* ── Scroll Reveal Animations ──────────────────────────────── */
+/* ── Scroll Reveal Animations ──────────────────────────── */
 
 .scroll-hidden {
   opacity: 0;
@@ -97,4 +97,71 @@
 
 .stat-animate {
   animation: countPulse 0.6s ease-out forwards;
+}
+
+/* ── Loader Keyframes ──────────────────────────────── */
+
+@keyframes ringIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes logoReveal {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.7); filter: blur(6px); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); filter: blur(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes connPulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes barGrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes orbitA {
+  from { transform: rotate(0deg) translateX(105px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(105px) rotate(-360deg); }
+}
+
+@keyframes orbitB {
+  from { transform: rotate(72deg) translateX(90px) rotate(-72deg); }
+  to { transform: rotate(432deg) translateX(90px) rotate(-432deg); }
+}
+
+@keyframes orbitC {
+  from { transform: rotate(144deg) translateX(75px) rotate(-144deg); }
+  to { transform: rotate(504deg) translateX(75px) rotate(-504deg); }
+}
+
+@keyframes orbitD {
+  from { transform: rotate(216deg) translateX(100px) rotate(-216deg); }
+  to { transform: rotate(576deg) translateX(100px) rotate(-576deg); }
+}
+
+@keyframes orbitE {
+  from { transform: rotate(288deg) translateX(85px) rotate(-288deg); }
+  to { transform: rotate(648deg) translateX(85px) rotate(-648deg); }
+}
+
+@keyframes orbitF {
+  from { transform: rotate(30deg) translateX(70px) rotate(-30deg); }
+  to { transform: rotate(390deg) translateX(70px) rotate(-390deg); }
 }
