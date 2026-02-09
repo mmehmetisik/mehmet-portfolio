@@ -14,7 +14,7 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
-    title: "Head of AI",
+    title: "AI Team Lead",
     company: "Sofkar — AI-Powered Software Startup",
     period: "2024 – Present",
     badge: "TÜBİTAK BİGG Funded (₺1M)",
@@ -41,7 +41,7 @@ export const experience: Experience[] = [
       "Developed a cloud-synced inventory management system (Python + Google Drive), replacing error-prone Excel tracking and reducing stock discrepancies by 90%.",
       "Built a digital procurement request tracking system with automated email notifications, cutting manual follow-up phone traffic by 90%.",
       "Performed predictive modeling and data visualization to support sustainable management goals.",
-      "Created the WWTP Engineering Benchmark on Kaggle, evaluating 18 LLMs on 10 real-world wastewater engineering tasks.",
+      "Created the WWTP Engineering Benchmark on Kaggle, evaluating 20+ LLMs on 10 real-world wastewater engineering tasks.",
     ],
   },
   {
