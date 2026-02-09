@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# mehmetisik.dev — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Professional portfolio website for **Mehmet Işık**, Data Scientist & Machine Learning Engineer.
 
-Currently, two official plugins are available:
+🔗 **Live:** [https://mehmetisik.dev](https://mehmetisik.dev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About
 
-## React Compiler
+Showcasing 40+ projects across GenAI & LLM, Machine Learning, Data Engineering & Cloud, AI Applications, NLP, and Data Science. Built to demonstrate technical expertise and real-world impact for international career opportunities.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework:** React 18 + TypeScript
+- **Styling:** Tailwind CSS v4
+- **Build:** Vite
+- **Deployment:** Cloudflare Pages (auto-deploy from main branch)
+- **Domain:** mehmetisik.dev (Cloudflare Registrar)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Dark theme with cyan accent design
+- Filterable project gallery with 6 categories
+- Scroll reveal animations (CSS + Intersection Observer)
+- Counter animation for statistics
+- Fully responsive (mobile, tablet, desktop)
+- Modular architecture following Single Responsibility Principle
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+```
+src/
+├── data/           # Profile, skills, experience, projects, education
+├── components/
+│   ├── common/     # SectionHeader, TechBadge, SocialIcon
+│   ├── layout/     # Navbar, Footer
+│   └── sections/   # Hero, About, Skills, Experience, Projects, Education, Contact
+├── hooks/          # useScrollReveal (Intersection Observer)
+└── App.tsx         # Composition root
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Development
+```bash
+npm install
+npm run dev
 ```
+
+## Deployment
+
+Push to `main` branch triggers automatic deployment to Cloudflare Pages.
+```bash
+git add .
+git commit -m "your message"
+git push
+```
+
+## Contact
+
+- **Email:** mmehmetisik@hotmail.com
+- **LinkedIn:** [linkedin.com/in/mehmetisik4601](https://linkedin.com/in/mehmetisik4601)
+- **Kaggle:** [kaggle.com/mehmetisik](https://kaggle.com/mehmetisik)
+- **GitHub:** [github.com/mmehmetisik](https://github.com/mmehmetisik)
