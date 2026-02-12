@@ -1,5 +1,5 @@
 // ============================================================
-// Projects — Filterable project gallery
+// Projects â€” Filterable project gallery
 // SRP: Responsible only for rendering project cards and filter UI
 // Includes stagger reveal animation for project cards
 // ============================================================
@@ -20,12 +20,12 @@ export function Projects() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  // Show featured 6 first, then expand to show all
+  // Show featured 9 first, then expand to show all
   const visible = showAll
     ? filtered
     : activeFilter === "All"
-      ? projects.filter((p) => p.featured).slice(0, 6)
-      : filtered.slice(0, 6);
+      ? projects.filter((p) => p.featured).slice(0, 9)
+      : filtered.slice(0, 9);
 
   // Re-trigger stagger animation when filter changes or show all toggles
   useEffect(() => {
@@ -100,7 +100,7 @@ export function Projects() {
   );
 }
 
-// ── Sub-components (private to this file) ──────────────────
+// â”€â”€ Sub-components (private to this file) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 /** Filter button used in the category tabs */
 function FilterButton({

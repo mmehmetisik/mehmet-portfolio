@@ -57,7 +57,7 @@ export function Hero() {
             Get in Touch
           </a>
           <a
-            href="/Mehmet_Isik_CV.pdf"
+            href="/Mehmet_ISIK_CV.pdf"
             download
             className="px-6 py-3 border border-slate-700 hover:border-emerald-500/50 text-slate-300 rounded-lg transition-all hover:bg-slate-800/50 inline-flex items-center gap-2"
           >

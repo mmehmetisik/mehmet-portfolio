@@ -1,5 +1,5 @@
 // ============================================================
-// Projects Data â€” Portfolio projects
+// Projects Data Ã¢â‚¬â€ Portfolio projects
 // To add a new project: add a new object to the array
 // Each project has tags for filtering and links for external resources
 // ============================================================
@@ -41,8 +41,23 @@ export const projectCategories: ProjectCategory[] = [
 export const projects: Project[] = [
   // == GenAI & LLM ==
   {
+    title: "WWTP Operator Challenge",
+    subtitle: "22 LLMs as Plant Operators — 30-Day Sequential Decision Benchmark",
+    description:
+      "Can AI run a wastewater treatment plant? Tested 22 frontier LLMs as plant operators for 30 days using Monod kinetics simulation. Features crisis scenarios (industrial shock, cold spell, blower fault), sequential decision-making, and failure pattern analysis. Best score: 64/100 — none passed.",
+    tags: ["LLM Benchmark", "Simulation", "Sequential Decision-Making", "Kaggle", "Monod Kinetics"],
+    category: "GenAI & LLM",
+    year: "2025",
+    links: {
+      github: "https://github.com/mmehmetisik/wwtp-operator-challenge",
+      kaggle: "https://www.kaggle.com/benchmarks/tasks/mehmetisik/wwtp-operator-challenge",
+    },
+    highlights: ["22 LLMs tested", "30-day simulation", "6 key findings published"],
+    featured: true,
+  },
+  {
     title: "WWTP Autonomous Management Benchmark",
-    subtitle: "Multi-LLM Agent Architecture â€” Research Project",
+    subtitle: "Multi-LLM Agent Architecture Ã¢â‚¬â€ Research Project",
     description:
       "Designed a novel benchmark testing whether AI agents can autonomously manage wastewater plant emergencies. Evaluated 7 frontier LLMs across 10 real-world emergency scenarios with 120+ evaluations.",
     tags: ["Claude", "Gemini", "Qwen", "DeepSeek", "Multi-Agent", "Benchmark"],
@@ -143,7 +158,7 @@ export const projects: Project[] = [
   },
   {
     title: "Emotion Recognition with Deep Learning",
-    subtitle: "Keras + CNN â€” Image Classification",
+    subtitle: "Keras + CNN Ã¢â‚¬â€ Image Classification",
     description:
       "Built a deep learning model using Keras and CNNs for recognizing human emotions from facial expressions, applying transfer learning and data augmentation techniques.",
     tags: ["Deep Learning", "Keras", "CNN", "Computer Vision"],
@@ -165,7 +180,7 @@ export const projects: Project[] = [
   },
   {
     title: "Titanic Survival Prediction",
-    subtitle: "Complete ML Pipeline â€” 34-Step Masterclass",
+    subtitle: "Complete ML Pipeline Ã¢â‚¬â€ 34-Step Masterclass",
     description:
       "End-to-end machine learning pipeline with comprehensive EDA, feature engineering, and model comparison for the classic Titanic dataset.",
     tags: ["Classification", "EDA", "Feature Engineering", "Scikit-learn"],
@@ -194,7 +209,7 @@ export const projects: Project[] = [
   },
   {
     title: "Is Bankasi Menu Recommendation System",
-    subtitle: "LightGBM + OneVsRestClassifier â€” Competition",
+    subtitle: "LightGBM + OneVsRestClassifier Ã¢â‚¬â€ Competition",
     description:
       "AI-based recommendation system for Is Bankasi mobile app menu suggestions using LightGBM and OneVsRestClassifier.",
     tags: ["LightGBM", "Classification", "Recommendation", "Competition"],
@@ -203,7 +218,7 @@ export const projects: Project[] = [
   },
   {
     title: "iyzico E-Commerce Forecasting",
-    subtitle: "XGBoost + Random Forests â€” Competition",
+    subtitle: "XGBoost + Random Forests Ã¢â‚¬â€ Competition",
     description:
       "ML-driven merchant trend forecasting for iyzico e-commerce platform using XGBoost and Random Forests.",
     tags: ["XGBoost", "Random Forest", "Forecasting", "Competition"],
@@ -239,7 +254,7 @@ export const projects: Project[] = [
   },
   {
     title: "Data Science Salary Prediction",
-    subtitle: "EDA + Regression â€” Score 0.93",
+    subtitle: "EDA + Regression Ã¢â‚¬â€ Score 0.93",
     description:
       "Exploratory data analysis and salary prediction for data science roles, achieving 0.93 prediction score with comprehensive feature analysis and visualization.",
     tags: ["Regression", "EDA", "Visualization", "Career Analytics"],
@@ -250,7 +265,7 @@ export const projects: Project[] = [
   },
   {
     title: "U.S. Farm Biogas ML Prediction",
-    subtitle: "Environmental ML â€” 2 Studies",
+    subtitle: "Environmental ML Ã¢â‚¬â€ 2 Studies",
     description:
       "Predicted biogas production potential from U.S. dairy cow and livestock farms using ML models, combining environmental engineering domain knowledge with data science.",
     tags: ["Regression", "Environmental", "Energy", "Domain Expertise"],
@@ -262,7 +277,7 @@ export const projects: Project[] = [
 
   // == Data Engineering & Cloud ==
   {
-    title: "ATİKSİS — Wastewater Treatment Plant Management System",
+    title: "ATÄ°KSÄ°S â€” Wastewater Treatment Plant Management System",
     subtitle: "React 19, Supabase, Claude/DeepSeek AI, Tailwind CSS 4, PWA",
     description:
       "Full-stack AI-powered plant management platform in production at Adana Water Authority. Simulation engine calibrated on 4 years of real data (1,454 data points), 16 process charts, AI briefing reports, inventory & procurement tracking. Multi-facility architecture.",
@@ -324,10 +339,11 @@ export const projects: Project[] = [
     year: "2023",
     links: { github: "https://github.com/mmehmetisik" },
     highlights: ["6 cloud-native pipelines", "Multiple AWS services"],
+    featured: true,
   },
   {
     title: "AWS DynamoDB & SQS Data Projects",
-    subtitle: "NoSQL + Message Queue â€” 2 Projects",
+    subtitle: "NoSQL + Message Queue Ã¢â‚¬â€ 2 Projects",
     description:
       "Built data insertion and processing pipelines using AWS DynamoDB for NoSQL storage and SQS for message queuing, implementing serverless architectures.",
     tags: ["DynamoDB", "SQS", "AWS", "Serverless", "NoSQL"],
@@ -338,7 +354,7 @@ export const projects: Project[] = [
   },
   {
     title: "ADANA ASKI Industrial Management Systems",
-    subtitle: "Inventory & Request Tracking â€” 2 Systems",
+    subtitle: "Inventory & Request Tracking Ã¢â‚¬â€ 2 Systems",
     description:
       "Developed two real-world industrial management systems for Adana Water Authority: an inventory tracking system for warehouse management and a service request tracking system for operational workflows.",
     tags: ["Industrial IoT", "Management System", "Real-World", "Operations"],
@@ -351,7 +367,7 @@ export const projects: Project[] = [
   // == NLP ==
   {
     title: "Amazon Reviews Sentiment Analysis",
-    subtitle: "NLP + ML for Sales Insights â€” 2 Projects",
+    subtitle: "NLP + ML for Sales Insights Ã¢â‚¬â€ 2 Projects",
     description:
       "Built two comprehensive sentiment analysis pipelines for Amazon product reviews using different NLP approaches, extracting actionable insights to boost sales.",
     tags: ["NLP", "Sentiment Analysis", "Text Mining", "Business"],
@@ -382,7 +398,7 @@ export const projects: Project[] = [
   // == Data Science ==
   {
     title: "Global Renewable Energy Analysis",
-    subtitle: "17-Part EDA Series â€” Solar, Wind, Hydro, Biofuel, Geothermal",
+    subtitle: "17-Part EDA Series Ã¢â‚¬â€ Solar, Wind, Hydro, Biofuel, Geothermal",
     description:
       "Comprehensive 17-notebook analysis series examining global renewable energy trends across 5 major sectors. Covers production capacity, growth patterns, and regional comparisons with rich visualizations.",
     tags: ["EDA", "Visualization", "Energy", "Pandas", "Environmental"],
@@ -390,10 +406,11 @@ export const projects: Project[] = [
     year: "2024",
     links: { kaggle: "https://kaggle.com/mehmetisik" },
     highlights: ["17 notebooks", "5 energy sectors", "Global scope"],
+    featured: true,
   },
   {
     title: "Solar Power Generation Analysis",
-    subtitle: "EDA & Visualization â€” 23 Comments",
+    subtitle: "EDA & Visualization Ã¢â‚¬â€ 23 Comments",
     description:
       "Detailed exploratory analysis of solar power generation data with comprehensive visualizations, trend analysis, and performance metrics.",
     tags: ["EDA", "Solar Energy", "Visualization", "Pandas"],
@@ -424,7 +441,7 @@ export const projects: Project[] = [
   },
   {
     title: "RFM Analysis & Customer Segmentation",
-    subtitle: "CRM Analytics â€” 3 Projects",
+    subtitle: "CRM Analytics Ã¢â‚¬â€ 3 Projects",
     description:
       "Applied RFM (Recency, Frequency, Monetary) analysis across 3 different retail datasets including FLO, demonstrating versatile CRM analytics skills with varying segmentation strategies.",
     tags: ["RFM", "Segmentation", "CRM", "Business"],
@@ -434,7 +451,7 @@ export const projects: Project[] = [
   },
   {
     title: "CLTV Prediction & Customer Lifetime Value",
-    subtitle: "BG-NBD & Gamma-Gamma â€” 3 Projects",
+    subtitle: "BG-NBD & Gamma-Gamma Ã¢â‚¬â€ 3 Projects",
     description:
       "Predicted customer lifetime value using BG-NBD and Gamma-Gamma models across 3 projects including FLO retail, with customer segmentation for strategic business planning.",
     tags: ["CLTV", "BG-NBD", "Gamma-Gamma", "Segmentation"],
@@ -454,7 +471,7 @@ export const projects: Project[] = [
   },
   {
     title: "Recommendation Systems",
-    subtitle: "4 Approaches â€” Content, Item, User, Model-Based",
+    subtitle: "4 Approaches Ã¢â‚¬â€ Content, Item, User, Model-Based",
     description:
       "Developed a comprehensive recommendation system portfolio implementing 4 different approaches: content-based, item-based collaborative filtering, user-based collaborative filtering, and model-based matrix factorization.",
     tags: ["Recommender System", "Collaborative Filtering", "Matrix Factorization"],
@@ -464,7 +481,7 @@ export const projects: Project[] = [
   },
   {
     title: "Association Rule Learning",
-    subtitle: "Market Basket Analysis â€” 2 Projects",
+    subtitle: "Market Basket Analysis Ã¢â‚¬â€ 2 Projects",
     description:
       "Applied Apriori and association rule mining algorithms across 2 projects for market basket analysis, discovering purchasing patterns and product relationships.",
     tags: ["Apriori", "Market Basket", "Association Rules", "Business"],
@@ -474,7 +491,7 @@ export const projects: Project[] = [
   },
   {
     title: "Rating & Sorting Systems",
-    subtitle: "Wilson Lower Bound + IMDB Scoring â€” 4 Projects",
+    subtitle: "Wilson Lower Bound + IMDB Scoring Ã¢â‚¬â€ 4 Projects",
     description:
       "Built 4 different product rating and review sorting systems using statistical methods including Wilson Lower Bound, Bayesian average, and IMDB weighted scoring.",
     tags: ["Statistics", "Wilson Score", "Bayesian", "Ranking"],
@@ -484,7 +501,7 @@ export const projects: Project[] = [
   },
   {
     title: "Rule-Based Classification",
-    subtitle: "Customer Segmentation â€” 2 Projects",
+    subtitle: "Customer Segmentation Ã¢â‚¬â€ 2 Projects",
     description:
       "Developed rule-based classification systems across 2 projects for customer segmentation and persona definition using demographic and behavioral data.",
     tags: ["Classification", "Rule-Based", "Segmentation", "Business"],
@@ -503,7 +520,7 @@ export const projects: Project[] = [
   },
   {
     title: "Airline Passenger Forecasting",
-    subtitle: "Time Series Analysis â€” 27 Comments",
+    subtitle: "Time Series Analysis Ã¢â‚¬â€ 27 Comments",
     description:
       "Time series forecasting of airline passenger volumes using statistical and ML approaches, with comprehensive trend and seasonality analysis.",
     tags: ["Time Series", "Forecasting", "ARIMA", "Visualization"],
@@ -514,7 +531,7 @@ export const projects: Project[] = [
   },
   {
     title: "Transaction Forecasting",
-    subtitle: "Financial Time Series â€” 20 Comments",
+    subtitle: "Financial Time Series Ã¢â‚¬â€ 20 Comments",
     description:
       "Forecasting financial transaction volumes using time series methods with trend decomposition, seasonality modeling, and predictive analytics.",
     tags: ["Time Series", "Forecasting", "Financial", "Analytics"],
@@ -525,7 +542,7 @@ export const projects: Project[] = [
   },
   {
     title: "Time Series Methods & Smoothing",
-    subtitle: "Holt-Winters + Statistical Methods â€” 2 Projects",
+    subtitle: "Holt-Winters + Statistical Methods Ã¢â‚¬â€ 2 Projects",
     description:
       "Applied Holt-Winters exponential smoothing and various statistical time series methods across 2 projects for trend analysis and forecasting.",
     tags: ["Holt-Winters", "Time Series", "Smoothing", "Statistics"],
