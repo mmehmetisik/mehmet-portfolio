@@ -41,6 +41,20 @@ export const projectCategories: ProjectCategory[] = [
 export const projects: Project[] = [
   // == GenAI & LLM ==
   {
+    title: "WWTP RAG Benchmark",
+    subtitle: "25 LLMs × 3 RAG Modes — 365-Day WWTP Simulation",
+    description:
+      "Can LLMs make better decisions with documentation access? Tested 25 frontier LLMs as virtual plant operators across a full-year WWTP simulation in 3 RAG modes (Bare, Passive, Active). Physics-based engine with Monod kinetics, 18 crisis scenarios, and 100-point scoring system. Best score: DeepSeek R1 at 68.4/100.",
+    tags: ["LLM Benchmark", "RAG", "Simulation", "Physics Engine", "25 Models"],
+    category: "GenAI & LLM",
+    year: "2026",
+    links: {
+      github: "https://github.com/mmehmetisik/wwtp-rag-benchmark",
+    },
+    highlights: ["25 LLMs tested", "365-day simulation", "3 RAG modes compared"],
+    featured: true,
+  },
+  {
     title: "WWTP Operator Challenge",
     subtitle: "22 LLMs as Plant Operators — 30-Day Sequential Decision Benchmark",
     description:
