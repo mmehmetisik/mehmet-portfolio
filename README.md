@@ -6,11 +6,11 @@ Professional portfolio website for **Mehmet Işık**, Data Scientist & Machine L
 
 ## About
 
-Showcasing 40+ projects across GenAI & LLM, Machine Learning, Data Engineering & Cloud, AI Applications, NLP, and Data Science. Built to demonstrate technical expertise and real-world impact for international career opportunities.
+Showcasing 49+ projects across GenAI & LLM, Machine Learning, Data Engineering & Cloud, AI Applications, NLP, and Data Science. Built to demonstrate technical expertise and real-world impact for international career opportunities.
 
 ## Tech Stack
 
-- **Framework:** React 18 + TypeScript
+- **Framework:** React 19 + TypeScript
 - **Styling:** Tailwind CSS v4
 - **Build:** Vite
 - **Deployment:** Cloudflare Pages (auto-deploy from main branch)
@@ -31,7 +31,7 @@ src/
 ├── data/           # Profile, skills, experience, projects, education
 ├── components/
 │   ├── common/     # SectionHeader, TechBadge, SocialIcon
-│   ├── layout/     # Navbar, Footer
+│   ├── layout/     # Navbar, Footer, Loader
 │   └── sections/   # Hero, About, Skills, Experience, Projects, Education, Contact
 ├── hooks/          # useScrollReveal (Intersection Observer)
 └── App.tsx         # Composition root
