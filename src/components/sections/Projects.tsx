@@ -24,8 +24,8 @@ export function Projects() {
   const visible = showAll
     ? filtered
     : activeFilter === "All"
-      ? projects.filter((p) => p.featured).slice(0, 9)
-      : filtered.slice(0, 9);
+      ? projects.filter((p) => p.featured).slice(0, 10)
+      : filtered.slice(0, 10);
 
   // Re-trigger stagger animation when filter changes or show all toggles
   useEffect(() => {

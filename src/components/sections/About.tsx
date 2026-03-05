@@ -13,7 +13,7 @@ import { useScrollReveal, useStaggerReveal } from "../../hooks/useScrollReveal";
 const stats = [
   { value: "10+", label: "Years Industrial & Engineering Experience", numeric: 10 },
   { value: "120+", label: "Kaggle Notebooks", numeric: 120 },
-  { value: "20+", label: "LLMs Benchmarked", numeric: 20 },
+  { value: "25+", label: "LLMs Benchmarked", numeric: 25 },
   { value: "90%", label: "Efficiency Gains Delivered", numeric: 90 },
 ];
 
