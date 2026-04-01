@@ -305,14 +305,17 @@ export const projects: Project[] = [
 
   // == Data Engineering & Cloud ==
   {
-    title: "ATÄ°KSÄ°S â€” Wastewater Treatment Plant Management System",
-    subtitle: "React 19, Supabase, Claude/DeepSeek AI, Tailwind CSS 4, PWA",
+    title: "HUAYSI — Smart Wastewater Management Platform",
+    subtitle: "React 19, Supabase, XGBoost, Claude/DeepSeek AI, PWA",
     description:
-      "Full-stack AI-powered plant management platform in production at Adana Water Authority. Simulation engine calibrated on 4 years of real data (1,454 data points), 16 process charts, AI briefing reports, inventory & procurement tracking. Multi-facility architecture.",
-    tags: ["React 19", "Supabase", "Claude AI", "DeepSeek", "Tailwind CSS 4", "PWA"],
+      "White-label SaaS platform for wastewater treatment plant operations. 16 process charts, AI briefing reports, XGBoost-based 3-day parameter forecasting, interactive flow diagrams with simulation engine, inventory & procurement tracking. Multi-facility architecture with subdomain-based routing and 7-role permission system.",
+    tags: ["React 19", "Supabase", "XGBoost", "Claude AI", "Tailwind CSS 4", "PWA"],
     category: "Data Engineering & Cloud",
     year: "2025",
-    highlights: ["Production system", "1,454 real data points", "16 process charts"],
+    links: {
+      github: "https://github.com/mmehmetisik/wwtp-management",
+    },
+    highlights: ["White-label SaaS", "7-role permission system", "ML predictions"],
     featured: true,
   },
   {
