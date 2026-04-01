@@ -41,6 +41,20 @@ export const projectCategories: ProjectCategory[] = [
 export const projects: Project[] = [
   // == GenAI & LLM ==
   {
+    title: "Hotel Intelligence Platform",
+    subtitle: "End-to-End AI/ML Platform for Hospitality Analytics",
+    description:
+      "Full-stack AI platform processing 119K+ bookings, 12K customers, and 3K reviews across 4 integrated modules: Predictive Analytics (cancellation forecasting, CLTV, RFM segmentation), LLM & NLP (invoice classification, sentiment analysis), Conversational AI (natural language to SQL chatbot with auto-visualization), and MLOps (drift detection, health scoring). Streamlit dashboard with 4-language support.",
+    tags: ["XGBoost", "LLM", "Streamlit", "MLflow", "Docker", "NLP"],
+    category: "GenAI & LLM",
+    year: "2026",
+    links: {
+      github: "https://github.com/mmehmetisik/hotel-intelligence-platform",
+    },
+    highlights: ["AUC-ROC 0.9465", "€13.9M+ revenue impact", "188+ tests"],
+    featured: true,
+  },
+  {
     title: "WWTP RAG Benchmark",
     subtitle: "25 LLMs × 3 RAG Modes — 365-Day WWTP Simulation",
     description:

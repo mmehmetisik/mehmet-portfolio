@@ -6,7 +6,7 @@ Professional portfolio website for **Mehmet Işık**, Data Scientist & Machine L
 
 ## About
 
-Showcasing 50+ projects across GenAI & LLM, Machine Learning, Data Engineering & Cloud, AI Applications, NLP, and Data Science. Built to demonstrate technical expertise and real-world impact for international career opportunities.
+Showcasing 51+ projects across GenAI & LLM, Machine Learning, Data Engineering & Cloud, AI Applications, NLP, and Data Science. Built to demonstrate technical expertise and real-world impact for international career opportunities.
 
 ## Tech Stack
 
