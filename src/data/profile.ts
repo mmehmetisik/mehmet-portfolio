@@ -5,13 +5,13 @@
 
 export const profile = {
   name: "Mehmet Işık",
-  title: "Data Scientist & Machine Learning Engineer",
+  title: "Data Scientist & Machine Learning Engineer | Kaggle Grandmaster",
   tagline: "Turning 10+ years of industrial & engineering experience into AI solutions",
   location: "Adana, Turkey",
   email: "mmehmetisik@hotmail.com",
   phone: "+90 545 440 62 08",
   about: [
-    "Data Scientist with 10+ years of industrial plant management experience, now specializing in Machine Learning, NLP, and GenAI. Currently leading AI product development at a TÜBİTAK-funded startup, building an NLP-driven data analytics platform.",
+    "Kaggle Grandmaster and Data Scientist with 10+ years of industrial plant management experience, now specializing in Machine Learning, NLP, and GenAI. Currently leading AI product development at a TÜBİTAK-funded startup, building an NLP-driven data analytics platform.",
     "What sets me apart is the rare combination of deep domain expertise in wastewater treatment and environmental engineering with advanced data science capabilities. I don't just build models — I design and deploy real-world applications that solve actual operational problems.",
     "From AI-powered inventory systems reducing stock discrepancies by 90%, to multi-LLM benchmark studies evaluating 20+ frontier models, to real-time IoT data pipelines — I bring engineering discipline to data science.",
   ],
