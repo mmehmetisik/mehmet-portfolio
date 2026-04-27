@@ -13,8 +13,8 @@ import { useScrollReveal, useStaggerReveal } from "../../hooks/useScrollReveal";
 const stats = [
   { value: "10+", label: "Years Industrial & Engineering Experience", numeric: 10 },
   { value: "120+", label: "Kaggle Notebooks", numeric: 120 },
-  { value: "25+", label: "LLMs Benchmarked", numeric: 25 },
-  { value: "90%", label: "Efficiency Gains Delivered", numeric: 90 },
+  { value: "32+", label: "LLMs Benchmarked", numeric: 32 },
+  { value: "AGI", label: "DeepMind Hackathon Submission", numeric: 0 },
 ];
 
 // Custom hook: animate a number from 0 to target
@@ -47,12 +47,13 @@ function useCountUp(target: number, trigger: boolean, duration: number = 1500) {
 // Individual stat card with counter animation
 function StatCard({ stat, trigger }: { stat: typeof stats[number]; trigger: boolean }) {
   const count = useCountUp(stat.numeric, trigger);
+  const isAnimated = stat.numeric > 0;
   const suffix = stat.value.includes("%") ? "%" : "+";
 
   return (
     <div className="stagger-item p-4 rounded-xl bg-slate-800/30 border border-slate-800/50 text-center hover:border-cyan-800/30 transition-colors">
       <div className="text-2xl font-bold text-cyan-400 mb-1">
-        {trigger ? `${count}${suffix}` : stat.value}
+        {isAnimated && trigger ? `${count}${suffix}` : stat.value}
       </div>
       <div className="text-xs text-slate-500 leading-tight">
         {stat.label}

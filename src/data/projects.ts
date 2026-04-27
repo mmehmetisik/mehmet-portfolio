@@ -41,6 +41,21 @@ export const projectCategories: ProjectCategory[] = [
 export const projects: Project[] = [
   // == GenAI & LLM ==
   {
+    title: "WWTP LLM Defense Benchmark",
+    subtitle: "32 LLMs Defend a Plant Against a 36-Hour Stuxnet-Style Cyber Attack",
+    description:
+      "Google DeepMind + Kaggle \"Measuring Progress Toward AGI\" Hackathon submission (Metacognition Track). 32 frontier LLMs operate as sole SCADA controllers of a real WWTP under sustained cyber attack. Two-layer architecture (TRUE physics vs DISPLAYED state) with 5 attack scenarios × 3 modes × 2 awareness levels = 30 runs per model. Key finding: detection ≠ score — calibration predicts performance. Best: Claude Opus 4.6 at 95.3/100.",
+    tags: ["LLM Benchmark", "SCADA Security", "Metacognition", "32 Models", "Hackathon", "Stuxnet"],
+    category: "GenAI & LLM",
+    year: "2026",
+    links: {
+      github: "https://github.com/mmehmetisik/wwtp-llm-defense-benchmark",
+      kaggle: "https://www.kaggle.com/benchmarks/tasks/mehmetisik/wwtp-llm-defense-can-ai-protect-critical-infrastructure",
+    },
+    highlights: ["Top: Claude Opus 4.6 — 95.3/100", "Calibration > Detection (ρ = −0.48)", "DeepMind AGI Hackathon"],
+    featured: true,
+  },
+  {
     title: "Hotel Intelligence Platform",
     subtitle: "End-to-End AI/ML Platform for Hospitality Analytics",
     description:
