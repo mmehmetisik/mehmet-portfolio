@@ -40,6 +40,22 @@ export const projectCategories: ProjectCategory[] = [
 ];
 
 export const projects: Project[] = [
+  // == Flagship — Production SaaS ==
+  {
+    title: "HUAYSI — Smart Wastewater Management Platform",
+    subtitle: "Production SaaS for Adana ASKİ — 3 Facilities, ~20 Active Users",
+    description:
+      "White-label multi-tenant SaaS AI platform in production for wastewater treatment plants. 328 modular files across 12 functional modules with a 12-engine simulation core (mass balance, hydraulic, energy, Monte Carlo, optimization, sensitivity, sludge) calibrated on 4 years of real plant data (1,454 points). 16 process charts, XGBoost-based 3-day prediction (KOİ, BOİ, AKM) with per-tenant model training. 4-provider AI briefing engine (Claude, DeepSeek, OpenAI, Google AI) generating weekly facility assessments. Subdomain-based isolation with 7 role types and module-level RBAC.",
+    tags: ["React 19", "Supabase", "XGBoost", "Multi-Tenant SaaS", "Tailwind CSS 4", "PWA"],
+    category: "Data Engineering & Cloud",
+    year: "2025-2026",
+    links: {
+      github: "https://github.com/mmehmetisik/wwtp-management",
+    },
+    highlights: ["Production at Adana ASKİ — 3 facilities, ~20 users", "12 simulation engines · 4 AI providers", "16 process charts · XGBoost per-tenant"],
+    featured: true,
+  },
+
   // == GenAI & LLM ==
   {
     title: "WWTP Acoustic Safety System",
@@ -336,20 +352,6 @@ export const projects: Project[] = [
   },
 
   // == Data Engineering & Cloud ==
-  {
-    title: "HUAYSI — Smart Wastewater Management Platform",
-    subtitle: "React 19, Supabase, XGBoost, Claude/DeepSeek AI, PWA",
-    description:
-      "White-label SaaS platform for wastewater treatment plant operations. 16 process charts, AI briefing reports, XGBoost-based 3-day parameter forecasting, interactive flow diagrams with simulation engine, inventory & procurement tracking. Multi-facility architecture with subdomain-based routing and 7-role permission system.",
-    tags: ["React 19", "Supabase", "XGBoost", "Claude AI", "Tailwind CSS 4", "PWA"],
-    category: "Data Engineering & Cloud",
-    year: "2025",
-    links: {
-      github: "https://github.com/mmehmetisik/wwtp-management",
-    },
-    highlights: ["White-label SaaS", "7-role permission system", "ML predictions"],
-    featured: true,
-  },
   {
     title: "Real-Time IoT Sensor Data Analytics",
     subtitle: "Kafka, Spark, Elasticsearch, Kibana, Docker",
