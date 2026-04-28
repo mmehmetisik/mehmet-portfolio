@@ -14,6 +14,7 @@ export interface Project {
   links?: {
     github?: string;
     kaggle?: string;
+    kaggle_writeup?: string;
     medium?: string;
     demo?: string;
   };
@@ -40,6 +41,22 @@ export const projectCategories: ProjectCategory[] = [
 
 export const projects: Project[] = [
   // == GenAI & LLM ==
+  {
+    title: "WWTP Acoustic Safety System",
+    subtitle: "Can AI Hear What Human Ears Miss? — Gemma 4 Good Hackathon 2026",
+    description:
+      "Industrial acoustic safety system for wastewater treatment plants. Detects human distress under 95dB noise using Gemma 4 E4B + spectrogram vision + Chain-of-Thought reasoning, 100% offline via Ollama. Inspired by a real incident at a drinking water plant in Adana. Field-validated at Ceyhan WWTP with zero false positives across 30 real-world chunks. 8 iterations took the system from 3.0 to 91.0/100.",
+    tags: ["Gemma 4 E4B", "Multimodal LLM", "Spectrogram Vision", "Chain-of-Thought", "Ollama", "Hackathon"],
+    category: "GenAI & LLM",
+    year: "2026",
+    links: {
+      github: "https://github.com/mmehmetisik/wwtp-acoustic-safety-system",
+      kaggle: "https://www.kaggle.com/datasets/mehmetisik/wwtp-acoustic-safety-benchmark",
+      kaggle_writeup: "https://www.kaggle.com/competitions/gemma-4-good-hackathon/writeups/can-ai-hear-what-human-ears-miss-acoustic-safety",
+    },
+    highlights: ["91.0/100 — Zero False Positives", "S5: CERTAIN SURVIVAL", "Field-validated at Ceyhan WWTP"],
+    featured: true,
+  },
   {
     title: "WWTP LLM Defense Benchmark",
     subtitle: "32 LLMs Defend a Plant Against a 36-Hour Stuxnet-Style Cyber Attack",

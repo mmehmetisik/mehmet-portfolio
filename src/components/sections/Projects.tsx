@@ -199,6 +199,16 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
               {"Kaggle \u2192"}
             </a>
           )}
+          {project.links.kaggle_writeup && (
+            <a
+              href={project.links.kaggle_writeup}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-500 hover:text-cyan-400 transition-colors"
+            >
+              {"Writeup \u2192"}
+            </a>
+          )}
           {project.links.demo && (
             <a
               href={project.links.demo}
